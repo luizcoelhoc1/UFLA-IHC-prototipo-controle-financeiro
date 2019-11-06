@@ -23,23 +23,30 @@ public class HomeFragment extends Fragment {
         homeViewModel =ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        final TextView nubank = root.findViewById(R.id.saldo_conta1);
+        final TextView nubank = root.findViewById(R.id.nuId);
+        final TextView bradesco = root.findViewById(R.id.brid);
+        nubank.setText("500");
+        bradesco.setText("484");
+
         final TextView textView = root.findViewById(R.id.text_home);
 
 
         final String saldoNubank = nubank.getText().toString();
-        final String saldoBradesco = nubank.getText().toString();
+        final String saldoBradesco = bradesco.getText().toString();
 
         final Double nSaldoNu = Double.parseDouble(saldoNubank);
         final Double nSaldoBra = Double.parseDouble(saldoBradesco);
         final Double saldototal = nSaldoNu + nSaldoBra;
-        final String result = Double.toString(saldototal);
 
+
+        final String result = Double.toString(saldototal);
 
         homeViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(result);
+                nubank.setText("R$ " + saldoNubank+".00");
+                bradesco.setText("R$ " + saldoBradesco+".00");
+                textView.setText("R$ " + result+"0");
 
             }
         });

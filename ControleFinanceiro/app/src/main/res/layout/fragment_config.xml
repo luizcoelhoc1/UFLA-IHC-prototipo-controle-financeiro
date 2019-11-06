@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/logout"
         android:layout_width="314dp"
         android:layout_height="50dp"
         android:layout_marginTop="204dp"
@@ -54,16 +54,4 @@
         app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="304dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="36dp"
-        android:background="@color/colorAccent"
-        android:text="@string/altetar_senha"
-        android:textColor="@color/colorWhite"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
-        app:layout_constraintHorizontal_bias="0.481"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 </androidx.constraintlayout.widget.ConstraintLayout>

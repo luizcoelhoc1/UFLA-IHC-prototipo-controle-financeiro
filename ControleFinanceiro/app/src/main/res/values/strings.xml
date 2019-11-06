@@ -27,4 +27,19 @@
     <string name="saldo">Saldo Inicial</string>
     <string name="salvar">Salvar</string>
     <string name="banco">Banco</string>
+    <string name="moeda">R$</string>
+    <string name="nova_transacao">Nova Transação</string>
+    <string name="tipo_despesa">Despesa</string>
+    <string name="tipo">Tipo:</string>
+    <string name="despesa">Despesa</string>
+    <string name="receita">Receita</string>
+    <string name="transferencia">Transferência</string>
+    <string name="descricao">Descrição</string>
+    <string name="valor">Valor</string>
+    <string name="Data">Data</string>
+
+    <string-array name="lista_contas">
+        <item>Nubank</item>
+        <item>Bradesco</item>
+    </string-array>
 </resources>
