@@ -29,6 +29,7 @@
 
         <RadioButton
             android:id="@+id/radioDespesa"
+            android:checked="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/despesa" />
@@ -53,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextDescricao"
         android:layout_width="299dp"
         android:layout_height="60dp"
         android:layout_marginTop="120dp"
@@ -66,30 +67,30 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editTextValor"
         android:layout_width="300dp"
         android:layout_height="58dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="@string/valor"
         android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="@+id/editTextDescricao"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintStart_toStartOf="@+id/editTextDescricao"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDescricao" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/editTextData"
         android:layout_width="301dp"
         android:layout_height="64dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/Data"
         android:inputType="date"
-        app:layout_constraintEnd_toEndOf="@+id/editText2"
+        app:layout_constraintEnd_toEndOf="@+id/editTextValor"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editText2"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintStart_toStartOf="@+id/editTextValor"
+        app:layout_constraintTop_toBottomOf="@+id/editTextValor" />
 
     <Button
         android:id="@+id/saveId"
@@ -99,10 +100,10 @@
         android:text="@string/salvar"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editText7"
+        app:layout_constraintEnd_toEndOf="@+id/editTextData"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editText7"
-        app:layout_constraintTop_toBottomOf="@+id/editText7"
+        app:layout_constraintStart_toStartOf="@+id/editTextData"
+        app:layout_constraintTop_toBottomOf="@+id/editTextData"
         app:layout_constraintVertical_bias="0.797" />
 
     <Spinner
@@ -110,9 +111,9 @@
         android:layout_width="300dp"
         android:layout_height="53dp"
         android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="@+id/editText7"
+        app:layout_constraintEnd_toEndOf="@+id/editTextData"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editText7"
-        app:layout_constraintTop_toBottomOf="@+id/editText7" />
+        app:layout_constraintStart_toStartOf="@+id/editTextData"
+        app:layout_constraintTop_toBottomOf="@+id/editTextData" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
