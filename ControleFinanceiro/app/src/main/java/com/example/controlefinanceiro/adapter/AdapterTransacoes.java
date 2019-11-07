@@ -16,6 +16,7 @@ import java.util.List;
 
 public class AdapterTransacoes extends RecyclerView.Adapter<AdapterTransacoes.MyViewHolder> {
     private  List<Transacao> listaTransacao;
+
     public AdapterTransacoes(List<Transacao> lista) {
         this.listaTransacao = lista;
     }

@@ -25,12 +25,8 @@ public class LoginActivity extends AppCompatActivity {
         final Button loginButton = findViewById(R.id.btn_login_id);
         final ImageButton loginFacebook = findViewById(R.id.btn_fb_login);
         final ImageButton loginGoogle = findViewById(R.id.btn_google_login);
-        final EditText email = findViewById(R.id.editEmail);
-        final EditText senha = findViewById(R.id.editSenha);
 
-        strEmail = email.getText().toString();
-        strSenha = senha.getText().toString();
-        TextView t = findViewById(R.id.teste);
+
 
 
 
@@ -39,10 +35,17 @@ public class LoginActivity extends AppCompatActivity {
 ;
             @Override
             public void onClick(View v) {
-                    if((defaultEmail.equals(strEmail)) && (defaultSenha.equals(strSenha))){
-                        efetuarLogin();
-                    }
+                final EditText email = findViewById(R.id.editEmail);
+                final EditText senha = findViewById(R.id.editSenha);
 
+                strEmail = email.getText().toString();
+                strSenha = senha.getText().toString();
+                if((defaultEmail.equals(strEmail)) && (defaultSenha.equals(strSenha))){
+                    efetuarLogin();
+                }else{
+                    Toast.makeText(getApplicationContext(), "Email ou senha incorretos", Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
         loginFacebook.setOnClickListener(new View.OnClickListener(){

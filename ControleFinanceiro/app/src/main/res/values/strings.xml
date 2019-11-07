@@ -23,7 +23,7 @@
     <string name="email_user">jose.silva@gmail.com</string>
     <string name="altetar_senha">Alterar Senha</string>
     <string name="add_conta">Adicionar Conta</string>
-    <string name="nome_conta">Nome da Conta</string>
+    <string name="nome_conta">Tipo da Conta(Ex: Carteira, Poupança, Conta Corrente)</string>
     <string name="saldo">Saldo Inicial</string>
     <string name="salvar">Salvar</string>
     <string name="banco">Banco</string>

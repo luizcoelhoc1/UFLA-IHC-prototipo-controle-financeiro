@@ -25,9 +25,8 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
     private RecyclerView recyclerContas;
-    private List<Conta> listaConta = new ArrayList<>();
+    private static List<Conta> listaConta = new ArrayList<Conta>();
     private HomeViewModel homeViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =ViewModelProviders.of(this).get(HomeViewModel.class);
@@ -35,15 +34,20 @@ public class HomeFragment extends Fragment {
 
 
         final TextView textView = root.findViewById(R.id.text_home);
+        double saldoTotal = 0;
 
+        for (Conta c: listaConta){
+           saldoTotal = saldoTotal + c.getSaldo();
+        }
 
+        final double saldoT = saldoTotal;
 
 
         homeViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
 
-                textView.setText("R$ 1000");
+                textView.setText("R$ " + saldoT);
 
             }
         });
@@ -51,9 +55,7 @@ public class HomeFragment extends Fragment {
         recyclerContas = root.findViewById(R.id.recyclerContas);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
 
-        //criar transacoes
 
-        this.criarContas();
         //adapter
         AdapterContas adapter = new AdapterContas(listaConta);
 
@@ -65,21 +67,14 @@ public class HomeFragment extends Fragment {
         return root;
     }
 
-    public  void criarContas(){
-        Conta conta = new Conta("Brasil", 500.00);
-        this.listaConta.add(conta);
-        conta = new Conta("Nu", 500.00);
-        this.listaConta.add(conta);
-        conta = new Conta("Next", 500.00);
-        this.listaConta.add(conta);
-        conta = new Conta("Caixa", 500.00);
+    public  void criarContas(Conta conta){
+
         this.listaConta.add(conta);
 
 
+    }
 
-
-
-
-
+    public static List<Conta> getListaContas (){
+        return listaConta;
     }
 }

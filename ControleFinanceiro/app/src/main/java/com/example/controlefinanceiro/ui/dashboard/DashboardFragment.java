@@ -30,7 +30,8 @@ import java.util.List;
 public class DashboardFragment extends Fragment {
     private RecyclerView recyclerTransacoes;
     private DashboardViewModel dashboardViewModel;
-    private List<Transacao> listaTransacao = new ArrayList<>();
+    private static List<Transacao> listaTransacao = new ArrayList<>();
+
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         dashboardViewModel = ViewModelProviders.of(this).get(DashboardViewModel.class);
@@ -51,7 +52,7 @@ public class DashboardFragment extends Fragment {
 
         //criar transacoes
 
-        this.criarTransacoes();
+       // this.criarTransacoes();
         //adapter
         AdapterTransacoes adapter = new AdapterTransacoes(listaTransacao);
 
@@ -72,33 +73,8 @@ public class DashboardFragment extends Fragment {
         return root;
     }
 
-    public  void criarTransacoes(){
-        Transacao transacao = new Transacao("Almoço", 15.00, "15/10/2019", "Despesa" );
+    public  void criarTransacoes(Transacao transacao){
         this.listaTransacao.add(transacao);
-        transacao = new Transacao("Almoço", 15.00, "15/10/2019", "Despesa" );
-        this.listaTransacao.add(transacao);
-        transacao = new Transacao("Almoço", 15.00, "15/10/2019", "Despesa" );
-        this.listaTransacao.add(transacao);
-        transacao = new Transacao("Almoço", 15.00, "15/10/2019", "Despesa" );
-        this.listaTransacao.add(transacao);
-        transacao = new Transacao("Almoço", 15.00, "15/10/2019", "Despesa" );
-        this.listaTransacao.add(transacao);
-        transacao = new Transacao("Almoço", 15.00, "15/10/2019", "Despesa" );
-        this.listaTransacao.add(transacao);
-        transacao = new Transacao("Almoço", 15.00, "15/10/2019", "Despesa" );
-        this.listaTransacao.add(transacao);
-        transacao = new Transacao("Almoço", 15.00, "15/10/2019", "Despesa" );
-        this.listaTransacao.add(transacao);
-        transacao = new Transacao("Almoço", 15.00, "15/10/2019", "Despesa" );
-        this.listaTransacao.add(transacao);transacao = new Transacao("Almoço", 15.00, "15/10/2019", "Despesa" );
-        this.listaTransacao.add(transacao);transacao = new Transacao("Almoço", 15.00, "15/10/2019", "Despesa" );
-        this.listaTransacao.add(transacao);transacao = new Transacao("Almoço", 15.00, "15/10/2019", "Despesa" );
-        this.listaTransacao.add(transacao);
-        transacao = new Transacao("Almoço", 15.00, "15/10/2019", "Despesa" );
-        this.listaTransacao.add(transacao);
-
-
-
 
     }
 }

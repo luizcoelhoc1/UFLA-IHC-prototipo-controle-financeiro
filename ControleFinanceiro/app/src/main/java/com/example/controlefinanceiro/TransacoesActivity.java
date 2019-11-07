@@ -14,8 +14,13 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.controlefinanceiro.model.Conta;
 import com.example.controlefinanceiro.model.Transacao;
 import com.example.controlefinanceiro.ui.dashboard.DashboardFragment;
+import com.example.controlefinanceiro.ui.home.HomeFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TransacoesActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     private static final String[] CONTAS = new String[]{"Nubank", "Bradesco"};
@@ -28,7 +33,16 @@ public class TransacoesActivity extends AppCompatActivity implements AdapterView
         Button save = findViewById(R.id.saveId);
 
         Spinner spinner = findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.lista_contas, android.R.layout.simple_spinner_item);
+        List<Conta> contas =  HomeFragment.getListaContas();
+        List<String> contasNome = new ArrayList<String>();
+
+        for (Conta c: contas){
+            contasNome.add(c.getBanco());
+        }
+        ArrayAdapter<String>adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, contasNome);
+
+    //    ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.lista_contas, android.R.layout.simple_spinner_item);
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
@@ -37,7 +51,30 @@ public class TransacoesActivity extends AppCompatActivity implements AdapterView
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                DashboardFragment df = new DashboardFragment();
 
+                EditText descricao = findViewById(R.id.editTextDescricao);
+                String descricaoString = descricao.getText().toString();
+
+                EditText data = findViewById(R.id.editTextData);
+                String dataString = data.getText().toString();
+
+                EditText valor = findViewById(R.id.editTextValor);
+                String valorString = valor.getText().toString();
+                double valorDouble = Double.parseDouble(valorString);
+
+                RadioGroup radioGroup = findViewById(R.id.radioGroup);
+
+                int selectedItemID = radioGroup.getCheckedRadioButtonId();
+
+                if(selectedItemID>0){
+
+                    RadioButton tipoRadio = (RadioButton) findViewById(selectedItemID);
+                    tipo = tipoRadio.getText().toString();
+                }
+
+                Transacao transacao = new Transacao(descricaoString, valorDouble, dataString, tipo);
+                df.criarTransacoes(transacao);
                 Intent i = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(i);
             }
