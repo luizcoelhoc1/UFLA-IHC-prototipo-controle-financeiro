@@ -45,4 +45,10 @@
         android:textSize="18sp"
         android:textStyle="bold"
         tools:text="@string/valor" />
+
+    <TextView
+        android:id="@+id/textConta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Conta" />
 </LinearLayout>

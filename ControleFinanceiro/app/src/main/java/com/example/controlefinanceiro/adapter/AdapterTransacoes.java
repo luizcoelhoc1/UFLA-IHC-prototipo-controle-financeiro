@@ -35,9 +35,10 @@ public class AdapterTransacoes extends RecyclerView.Adapter<AdapterTransacoes.My
         Transacao transacao = listaTransacao.get(position);
         holder.Tipo.setText(transacao.getTipo());
         String valor = Double.toString(transacao.getValor());
-        holder.Valor.setText("R$ " + valor );
+        holder.Valor.setText("R$ " + valor + "0");
         holder.Descricao.setText(transacao.getDescricao());
         holder.Data.setText(transacao.getData());
+        holder.Conta.setText(transacao.getConta());
     }
 
     @Override
@@ -50,6 +51,7 @@ public class AdapterTransacoes extends RecyclerView.Adapter<AdapterTransacoes.My
         TextView Valor;
         TextView Data;
         TextView Tipo;
+        TextView Conta;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -57,6 +59,7 @@ public class AdapterTransacoes extends RecyclerView.Adapter<AdapterTransacoes.My
             Valor = itemView.findViewById(R.id.textValor);
             Data = itemView.findViewById(R.id.textData);
             Tipo = itemView.findViewById(R.id.textTipo);
+            Conta = itemView.findViewById(R.id.textConta);
         }
     }
 }

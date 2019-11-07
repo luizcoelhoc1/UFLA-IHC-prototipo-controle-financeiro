@@ -7,13 +7,15 @@ public class Transacao {
     private Double Valor;
     private String Data;
     private String Tipo;
+    private String Conta;
 
 
-    public Transacao(String descricao, Double valor, String data, String tipo) {
+    public Transacao(String descricao, Double valor, String data, String tipo, String conta) {
         Descricao = descricao;
         Valor = valor;
         Data = data;
         Tipo = tipo;
+        Conta = conta;
     }
 
     public String getDescricao() {
@@ -46,5 +48,13 @@ public class Transacao {
 
     public void setTipo(String tipo) {
         Tipo = tipo;
+    }
+
+    public String getConta() {
+        return Conta;
+    }
+
+    public void setConta(String conta) {
+        Conta = conta;
     }
 }

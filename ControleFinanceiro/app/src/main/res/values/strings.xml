@@ -7,7 +7,11 @@
     <string name="password">Senha</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_dashboard">Extrato</string>
+    <string name="title_account">Perfil</string>
+    <string name="title_conta">Nova Conta</string>
+    <string name="title_transacao">Nova Transacao</string>
+
     <string name="title_notifications">Notifications</string>
 
     <!-- TODO: Remove or change this placeholder text -->

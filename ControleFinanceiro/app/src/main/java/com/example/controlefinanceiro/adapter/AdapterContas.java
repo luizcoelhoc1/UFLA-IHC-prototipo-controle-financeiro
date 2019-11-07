@@ -32,7 +32,7 @@ public class AdapterContas extends RecyclerView.Adapter<AdapterContas.MyViewHold
         Conta conta = listaConta.get(position);
         holder.Banco.setText(conta.getBanco());
         String saldo = Double.toString(conta.getSaldo());
-        holder.Saldo.setText("R$ " + saldo );
+        holder.Saldo.setText("R$ " + saldo + "0" );
     }
 
 

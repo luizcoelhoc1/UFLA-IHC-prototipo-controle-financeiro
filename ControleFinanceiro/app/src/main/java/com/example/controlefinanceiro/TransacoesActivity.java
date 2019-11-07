@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.example.controlefinanceiro.model.Conta;
 import com.example.controlefinanceiro.model.Transacao;
@@ -25,23 +24,24 @@ import java.util.List;
 public class TransacoesActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     private static final String[] CONTAS = new String[]{"Nubank", "Bradesco"};
     public String tipo;
-
+    private String contaEscolhida;
+    private String tipoDespesa = "Despesa";
+    private String tipoReceita = "Receita";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transacoes);
         Button save = findViewById(R.id.saveId);
 
-        Spinner spinner = findViewById(R.id.spinner);
+        final Spinner spinner = findViewById(R.id.spinner);
         List<Conta> contas =  HomeFragment.getListaContas();
         List<String> contasNome = new ArrayList<String>();
 
         for (Conta c: contas){
             contasNome.add(c.getBanco());
         }
-        ArrayAdapter<String>adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, contasNome);
+        final ArrayAdapter<String>adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, contasNome);
 
-    //    ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.lista_contas, android.R.layout.simple_spinner_item);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -52,7 +52,6 @@ public class TransacoesActivity extends AppCompatActivity implements AdapterView
             @Override
             public void onClick(View v) {
                 DashboardFragment df = new DashboardFragment();
-
                 EditText descricao = findViewById(R.id.editTextDescricao);
                 String descricaoString = descricao.getText().toString();
 
@@ -71,10 +70,17 @@ public class TransacoesActivity extends AppCompatActivity implements AdapterView
 
                     RadioButton tipoRadio = (RadioButton) findViewById(selectedItemID);
                     tipo = tipoRadio.getText().toString();
+                    if(tipo.equals(tipoDespesa)){
+                        HomeFragment.decrementarSaldoConta(contaEscolhida, valorDouble);
+                    }
+                    if(tipo.equals(tipoReceita)){
+                        HomeFragment.incrementaSaldoConta(contaEscolhida, valorDouble);
+                    }
                 }
 
-                Transacao transacao = new Transacao(descricaoString, valorDouble, dataString, tipo);
+                Transacao transacao = new Transacao(descricaoString, valorDouble, dataString, tipo, contaEscolhida);
                 df.criarTransacoes(transacao);
+
                 Intent i = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(i);
             }
@@ -84,7 +90,7 @@ public class TransacoesActivity extends AppCompatActivity implements AdapterView
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+        contaEscolhida = text;
     }
 
     @Override

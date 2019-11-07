@@ -1,24 +1,30 @@
 package com.example.controlefinanceiro.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.controlefinanceiro.MainActivity;
 import com.example.controlefinanceiro.R;
+import com.example.controlefinanceiro.RecyclerItemClickListener;
 import com.example.controlefinanceiro.adapter.AdapterContas;
 import com.example.controlefinanceiro.model.Conta;
+import com.example.controlefinanceiro.model.Transacao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +53,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onChanged(@Nullable String s) {
 
-                textView.setText("R$ " + saldoT);
+                textView.setText("R$ " + saldoT+"0");
 
             }
         });
@@ -63,15 +69,61 @@ public class HomeFragment extends Fragment {
         recyclerContas.setHasFixedSize(true);
         recyclerContas.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
         recyclerContas.setAdapter(adapter);
+        recyclerContas.addOnItemTouchListener(
+                new RecyclerItemClickListener(
+                        getContext(),
+                        recyclerContas,
+                        new RecyclerItemClickListener.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
 
+                            }
+
+                            @Override
+                            public void onLongItemClick(View view, final int position) {
+
+                                listaConta.remove(position);
+                                Intent i = new Intent(getContext(), MainActivity.class);
+                                startActivity(i);
+
+
+                            }
+
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                            }
+                        }
+                )
+        );
         return root;
     }
 
-    public  void criarContas(Conta conta){
+    public void criarContas(Conta conta){
 
         this.listaConta.add(conta);
 
 
+    }
+
+    public static void decrementarSaldoConta(String conta, double valor){
+        for (Conta c: listaConta){
+            if(c.getBanco().equals(conta)) {
+                double saldo = c.getSaldo();
+                double novosaldo = saldo - valor;
+                c.setSaldo(novosaldo);
+            }
+        }
+    }
+
+    public static void incrementaSaldoConta(String conta, double valor){
+        for (Conta c: listaConta){
+            if(c.getBanco().equals(conta)) {
+                double saldo = c.getSaldo();
+                double novosaldo = saldo + valor;
+                c.setSaldo(novosaldo);
+            }
+        }
     }
 
     public static List<Conta> getListaContas (){
