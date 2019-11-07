@@ -38,29 +38,6 @@ public class TransacoesActivity extends AppCompatActivity implements AdapterView
             @Override
             public void onClick(View v) {
 
-
-                EditText descricao = findViewById(R.id.editTextDescricao);
-                String descricaoString = descricao.getText().toString();
-
-                EditText data = findViewById(R.id.editTextData);
-                String dataString = data.getText().toString();
-
-                EditText valor = findViewById(R.id.editTextValor);
-                String valorString = valor.getText().toString();
-                double valorDouble = Double.parseDouble(valorString);
-
-                RadioGroup radioGroup = findViewById(R.id.radioGroup);
-
-                int selectedItemID = radioGroup.getCheckedRadioButtonId();
-
-                if(selectedItemID>0){
-
-                     RadioButton tipoRadio = (RadioButton) findViewById(selectedItemID);
-                     tipo = tipoRadio.getText().toString();
-                }
-
-                Transacao transacao = new Transacao(descricaoString, valorDouble, dataString, tipo);
-
                 Intent i = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(i);
             }
