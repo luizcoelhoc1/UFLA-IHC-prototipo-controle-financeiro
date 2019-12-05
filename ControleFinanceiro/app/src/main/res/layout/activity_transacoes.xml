@@ -10,10 +10,11 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="16dp"
         android:text="@string/nova_transacao"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.615"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,9 +30,9 @@
 
         <RadioButton
             android:id="@+id/radioDespesa"
-            android:checked="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="@string/despesa" />
 
         <RadioButton
@@ -44,53 +45,52 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="92dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="178dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="12dp"
         android:text="@string/tipo"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/radioGroup"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:layout_editor_absoluteX="134dp" />
 
     <EditText
         android:id="@+id/editTextDescricao"
         android:layout_width="299dp"
         android:layout_height="60dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/descricao"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintHorizontal_bias="0.432"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextValor"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextValor"
+        app:layout_constraintTop_toBottomOf="@+id/editTextValor" />
 
     <EditText
         android:id="@+id/editTextValor"
         android:layout_width="300dp"
         android:layout_height="58dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="116dp"
         android:ems="10"
         android:hint="@string/valor"
         android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="@+id/editTextDescricao"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextDescricao"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDescricao" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/editTextData"
         android:layout_width="301dp"
         android:layout_height="64dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="@string/Data"
         android:inputType="date"
-        app:layout_constraintEnd_toEndOf="@+id/editTextValor"
+        app:layout_constraintEnd_toEndOf="@+id/editTextDescricao"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextValor"
-        app:layout_constraintTop_toBottomOf="@+id/editTextValor" />
+        app:layout_constraintStart_toStartOf="@+id/editTextDescricao"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDescricao" />
 
     <Button
         android:id="@+id/saveId"
@@ -101,19 +101,30 @@
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/editTextData"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/editTextData"
         app:layout_constraintTop_toBottomOf="@+id/editTextData"
-        app:layout_constraintVertical_bias="0.797" />
+        app:layout_constraintVertical_bias="0.554" />
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="300dp"
         android:layout_height="53dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="76dp"
         app:layout_constraintEnd_toEndOf="@+id/editTextData"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextData"
+        app:layout_constraintTop_toBottomOf="@+id/editTextData" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/escollher_conta_bancaria"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.579"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextData" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

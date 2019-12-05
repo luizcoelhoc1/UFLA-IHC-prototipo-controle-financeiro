@@ -23,37 +23,33 @@
         android:id="@+id/editSaldo"
         android:layout_width="305dp"
         android:layout_height="48dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="@string/saldo"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_account" />
+        app:layout_constraintTop_toBottomOf="@+id/editBanco" />
 
     <Button
         android:id="@+id/saveId"
         android:layout_width="313dp"
         android:layout_height="43dp"
-        android:layout_marginTop="40dp"
         android:background="@color/colorAccent"
         android:text="@string/salvar"
         android:textColor="@color/colorWhite"
-        app:layout_constraintEnd_toEndOf="@+id/editBanco"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editBanco"
-        app:layout_constraintTop_toBottomOf="@+id/editBanco" />
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="233dp" />
 
     <EditText
         android:id="@+id/editBanco"
         android:layout_width="307dp"
         android:layout_height="48dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/banco"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editSaldo"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editSaldo"
-        app:layout_constraintTop_toBottomOf="@+id/editSaldo" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_account" />
 </androidx.constraintlayout.widget.ConstraintLayout>

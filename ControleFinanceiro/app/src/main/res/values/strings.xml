@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ControleFinanceiro</string>
+    <string name="app_name">Controle Financeiro</string>
     <string name="title_login">Login</string>
     <string name="login_with">Fazer login com</string>
     <string name="text_login">Entrar</string>
@@ -7,17 +7,17 @@
     <string name="password">Senha</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Extrato</string>
+    <string name="title_dashboard">Transações</string>
     <string name="title_account">Perfil</string>
-    <string name="title_conta">Nova Conta</string>
-    <string name="title_transacao">Nova Transacao</string>
+    <string name="title_conta">Adicionar uma conta bancária</string>
+    <string name="title_transacao">Adicionar transacao</string>
 
     <string name="title_notifications">Notifications</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="saldo_atual">Saldo Atual</string>
-    <string name="suas_contas">Suas Contas</string>
+    <string name="suas_contas">Suas contas bancárias</string>
     <string name="nubank">Nubank</string>
     <string name="bradesco">Bradesco</string>
     <string name="next">Next</string>
@@ -26,21 +26,22 @@
     <string name="logout">Sair</string>
     <string name="email_user">jose.silva@gmail.com</string>
     <string name="altetar_senha">Alterar Senha</string>
-    <string name="add_conta">Adicionar Conta</string>
+    <string name="add_conta">Adicionar conta bancária</string>
     <string name="nome_conta">Tipo da Conta(Ex: Carteira, Poupança, Conta Corrente)</string>
     <string name="saldo">Saldo Inicial</string>
     <string name="salvar">Salvar</string>
-    <string name="banco">Banco</string>
+    <string name="banco">Nome do banco</string>
     <string name="moeda">R$</string>
-    <string name="nova_transacao">Nova Transação</string>
-    <string name="tipo_despesa">Despesa</string>
-    <string name="tipo">Tipo:</string>
-    <string name="despesa">Despesa</string>
-    <string name="receita">Receita</string>
+    <string name="nova_transacao">Nova transação</string>
+    <string name="tipo_despesa">Uma despesa</string>
+    <string name="tipo">Essa transação é:</string>
+    <string name="despesa">Uma despesa</string>
+    <string name="receita">Uma receita</string>
     <string name="transferencia">Transferência</string>
     <string name="descricao">Descrição</string>
-    <string name="valor">Valor</string>
-    <string name="Data">Data</string>
+    <string name="valor">Valor em R$</string>
+    <string name="Data">Data em que foi realizada</string>
+    <string name="escollher_conta_bancaria">Escolha uma conta bancária para esta transação</string>
 
     <string-array name="lista_contas">
         <item>Nubank</item>
