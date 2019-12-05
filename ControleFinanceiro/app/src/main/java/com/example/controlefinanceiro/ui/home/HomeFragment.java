@@ -1,5 +1,7 @@
 package com.example.controlefinanceiro.ui.home;
 
+import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -83,8 +86,14 @@ public class HomeFragment extends Fragment {
                             public void onLongItemClick(View view, final int position) {
 
                                 listaConta.remove(position);
-                                Intent i = new Intent(getContext(), MainActivity.class);
-                                startActivity(i);
+                                //Intent i = new Intent(getContext(), MainActivity.class);
+                                //startActivity(i);
+                                Context contexto = getContext();
+                                String texto = "Conta removida, atualize a página para ver";
+                                int duracao = Toast.LENGTH_SHORT;
+
+                                Toast toast = Toast.makeText(contexto, texto,duracao);
+                                toast.show();
 
 
                             }

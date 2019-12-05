@@ -20,11 +20,11 @@
     <fragment
         android:id="@+id/navigation_account"
         android:name="com.example.controlefinanceiro.ui.account.AccountFragment"
-        android:label="Nova Conta"
+        android:label="Adicionar uma conta bancária"
         tools:layout="@layout/fragment_account" />
     <fragment
         android:id="@+id/navigation_config"
         android:name="com.example.controlefinanceiro.ui.config.ConfigFragment"
-        android:label="Perfil"
+        android:label="Meu Perfil"
         tools:layout="@layout/fragment_config" />
 </navigation>

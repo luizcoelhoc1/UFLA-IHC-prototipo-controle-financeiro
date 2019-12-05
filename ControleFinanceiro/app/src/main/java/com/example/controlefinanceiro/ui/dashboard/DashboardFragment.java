@@ -1,6 +1,7 @@
 package com.example.controlefinanceiro.ui.dashboard;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -92,8 +93,14 @@ public class DashboardFragment extends Fragment {
                                     HomeFragment.decrementarSaldoConta(conta,valor);
                                 }
                                 listaTransacao.remove(position);
-                                Intent i = new Intent(getContext(), MainActivity.class);
-                                startActivity(i);
+                                //Intent i = new Intent(getContext(), MainActivity.class);
+                                //startActivity(i);
+                                Context contexto = getContext();
+                                String texto = "Transação removida, atualize a página para ver";
+                                int duracao = Toast.LENGTH_SHORT;
+
+                                Toast toast = Toast.makeText(contexto, texto,duracao);
+                                toast.show();
 
                             }
 

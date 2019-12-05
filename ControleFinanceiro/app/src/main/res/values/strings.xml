@@ -6,7 +6,7 @@
     <string name="email">E-mail</string>
     <string name="password">Senha</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">Página pricipal</string>
     <string name="title_dashboard">Transações</string>
     <string name="title_account">Perfil</string>
     <string name="title_conta">Adicionar uma conta bancária</string>
@@ -28,20 +28,21 @@
     <string name="altetar_senha">Alterar Senha</string>
     <string name="add_conta">Adicionar conta bancária</string>
     <string name="nome_conta">Tipo da Conta(Ex: Carteira, Poupança, Conta Corrente)</string>
-    <string name="saldo">Saldo Inicial</string>
+    <string name="saldo">Saldo Inicial em R$</string>
     <string name="salvar">Salvar</string>
     <string name="banco">Nome do banco</string>
     <string name="moeda">R$</string>
-    <string name="nova_transacao">Nova transação</string>
-    <string name="tipo_despesa">Uma despesa</string>
-    <string name="tipo">Essa transação é:</string>
-    <string name="despesa">Uma despesa</string>
-    <string name="receita">Uma receita</string>
+    <string name="nova_transacao">Adicionar transação</string>
+    <string name="tipo_despesa">Despesa</string>
+    <string name="tipo">Essa transação é uma:</string>
+    <string name="despesa">Despesa</string>
+    <string name="receita">Receita</string>
     <string name="transferencia">Transferência</string>
     <string name="descricao">Descrição</string>
     <string name="valor">Valor em R$</string>
     <string name="Data">Data em que foi realizada</string>
     <string name="escollher_conta_bancaria">Escolha uma conta bancária para esta transação</string>
+    <string name="del_conta">Excluir</string>
 
     <string-array name="lista_contas">
         <item>Nubank</item>

@@ -4,28 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+
     tools:context=".TransacoesActivity">
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="91dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="24dp"
         android:text="@string/nova_transacao"
-        android:textSize="30sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="130dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="44dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="137dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/textView4">
 
         <RadioButton
@@ -45,45 +47,50 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="178dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="160dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="24dp"
         android:text="@string/tipo"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        tools:layout_editor_absoluteX="134dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/editTextDescricao"
-        android:layout_width="299dp"
-        android:layout_height="60dp"
+        android:layout_width="305dp"
+        android:layout_height="41dp"
+        android:textSize="14sp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/descricao"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/editTextValor"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextValor"
         app:layout_constraintTop_toBottomOf="@+id/editTextValor" />
 
     <EditText
         android:id="@+id/editTextValor"
-        android:layout_width="300dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="116dp"
+        android:layout_width="305dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="108dp"
         android:ems="10"
         android:hint="@string/valor"
         android:inputType="numberDecimal"
+        android:textSize="14sp"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintHorizontal_bias="0.622"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/editTextData"
-        android:layout_width="301dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="305dp"
+        android:layout_height="41dp"
+        android:textSize="14sp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/Data"
         android:inputType="date"
@@ -94,23 +101,24 @@
 
     <Button
         android:id="@+id/saveId"
-        android:layout_width="298dp"
-        android:layout_height="59dp"
+        android:layout_width="305dp"
+        android:layout_height="41dp"
         android:background="@color/colorAccent"
         android:text="@string/salvar"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editTextData"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextData"
-        app:layout_constraintTop_toBottomOf="@+id/editTextData"
-        app:layout_constraintVertical_bias="0.554" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.632"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:layout_constraintVertical_bias="0.274" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="300dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="76dp"
+        android:layout_width="305dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="48dp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/editTextData"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextData"
@@ -118,12 +126,12 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_width="306dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="12dp"
         android:text="@string/escollher_conta_bancaria"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.579"
+        app:layout_constraintHorizontal_bias="0.628"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextData" />
 
